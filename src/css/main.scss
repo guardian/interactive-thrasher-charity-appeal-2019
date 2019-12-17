@@ -1,0 +1,307 @@
+@import "mq";
+@import "fonts";
+@import "palette";
+
+// Uncomment for embeds
+//@import "embed";
+// Uncomment for full screen (including immersive article main media)
+//@import "fullscreen";
+
+// Default breakpoints from Frontend
+$mq-breakpoints: (
+    mobile:          320px,
+    mobileMedium:    360px,
+    mobileLandscape: 480px,
+    phablet:         660px,
+    tablet:          740px,
+    desktop:         980px,
+    leftCol:         1140px,
+    wide:            1300px
+);
+
+@font-face {
+    font-family: "GuardianTitlepiece";
+    src: url("https://interactive.guim.co.uk/fonts/garnett/GTGuardianTitlepiece-Bold.woff2") format("woff2"), url("https://interactive.guim.co.uk/fonts/garnett/GTGuardianTitlepiece-Bold.woff") format("woff"), url("https://interactive.guim.co.uk/fonts/garnett/GTGuardianTitlepiece-Bold.ttf") format("truetype");
+    font-weight: 700;
+    font-style: normal;
+}
+
+$backgroundColor: #FFBB50;
+
+section#charity-appeal-web-only {
+  width:100%;
+    position: relative;
+    padding: 0 !important;
+    overflow: hidden;
+    margin-bottom: 20px;
+    background-color:#fff;
+
+    .fc-container__inner,
+    .fc-slice,
+    .facia-snap {
+        overflow: hidden;
+    }
+
+    .facia-snap {
+        padding: 0;
+    }
+}
+
+.charity-appeal-tree-2019 {
+    background-color:$backgroundColor;
+    width:100%;
+    height:200px;
+    overflow:hidden;
+    &__headline {
+        color:#121212;
+        font-family:"GuardianTitlepiece","Guardian Egyptian Web",Georgia,serif;
+        font-size: 34px;
+        line-height:115%;
+        margin-left:10px;
+        @include mq ($from: mobileLandscape) {
+            margin-left:20px;
+            font-size:42px;
+        }
+        @include mq ($from: mobileMedium) {
+            font-size:38px;
+        }
+        @include mq ($from: phablet) {
+            font-size:50px;
+        }
+    }
+    &__subheadline {
+        color:#121212;
+        font-family: "Guardian Text Egyptian Web",Georgia,serif;
+        font-size: 17px;
+        line-height:115%;
+        font-weight: 400;
+        width: 70%;
+        margin-left: 10px;
+        @include mq ($from: mobileMedium) {
+            width:72%;
+        }
+        @include mq ($from: mobileLandscape) {
+            margin-left:20px;
+            width:60%;
+        }
+        @include mq ($from: phablet) {
+            width:59%;
+            font-size:19px;
+        }
+        @include mq ($from: desktop) {
+            width:40%;
+        }
+        @include mq ($from: leftCol) {
+            width:38%;
+        }
+        @include mq ($from: wide) {
+            width:33.5%;
+        }
+    }
+    &__subheadline-bold {
+        font-weight:700;
+    }
+    &__tree {
+        mix-blend-mode: darken;
+        // visibility: hidden;
+        position: absolute;
+        width: auto;
+        height: 240px;
+        right: -80px;
+        top: -6px;
+        // mix-blend-mode: multiply;
+        @include mq ($from: mobileMedium) {
+            right:-85px;
+            height:260px;
+            top:-26px;
+        }
+        @include mq ($from: mobileLandscape) {
+            right: -75px;
+            height: 340px;
+            top: -100px;
+        }
+        @include mq ($from: phablet) {
+            right: -50px;
+            height: 430px;
+            top: -175px;
+        }
+        @include mq ($from: tablet) {
+            right: -30px;
+            height: 390px;
+            top: -135px;
+        }
+        @include mq ($from: desktop) {
+            right: 190px;
+            height: 500px;
+            top: -250px;
+        }
+        @include mq ($from: leftCol) {
+            right: 242px;
+            height: 560px;
+            top: -285px;
+        }
+        @include mq ($from: wide) {
+            right: 293px;
+            height: 690px;
+            top: -385px;
+        }
+    }
+
+    &__component-button {
+        display: inline-flex;
+        flex-direction: row;
+        margin-left: 9px;
+        background-color:#121212; 
+        margin-top: 28px;
+        border-radius: 25px;
+        text-decoration: none;
+        span {
+            color: white;
+            font-family:"Guardian Text Sans Web","Helvetica Neue",Helvetica,Arial,"Lucida Grande",sans-serif;
+            font-weight:bold;
+            font-size:17px;
+            
+            padding: 10px;
+            padding-left:20px;
+            padding-right: 2px;
+            margin-top: -2px;
+            text-decoration: none;
+        }
+        svg {
+            padding: 10PX;
+            fill: white;
+            padding-right:16px;
+            transition: transform 0.3s;
+        }
+        @include mq ($from: mobileMedium) {
+            margin-top:43px;
+        }
+        @include mq ($from: mobileLandscape) {
+            margin-left:18px;
+            margin-top:38px;
+        }
+        @include mq ($from: phablet) {
+            margin-top: 25px;
+        }
+        @include mq ($from: tablet) {
+            margin-top:46px;
+        }
+        @include mq ($from: desktop) {
+            margin-top:25px;
+        }
+        @include mq ($from: leftCol) {
+            margin-top:46px;
+        }
+        @include mq ($from: wide) {
+            margin-top: 48px;
+        }
+        transition: background 0.3s;
+        
+    }
+
+    &__component-button:hover {
+        background-color:#454545;
+        text-decoration: none;
+        span {
+            text-decoration:none;
+        }
+        svg {
+            transform:translateX(3px);
+        }
+    }
+
+    
+
+
+    &__roundel {
+        position:absolute;
+        top:2px;
+        right:4px;
+        @include mq ($from: mobileMedium) {
+            top:4px;
+        }
+        @include mq ($from: mobileLandscape) {
+            right: 18px;
+        }
+    }
+
+    &__gu-obs-logo {
+        visibility: hidden;
+        position: absolute;
+        right: 20px;
+        bottom: -2px;
+        @include mq ($from: desktop) {
+            visibility: visible;
+        }
+    }
+}
+
+.charity-appeal-tree-2019__tree {
+    mix-blend-mode: darken;
+    transition:visibility 0.2s linear,opacity 0.2s linear;
+}
+
+.step1 {
+    img.tree-big {
+        mix-blend-mode: darken;
+        visibility: hidden;
+        opacity:0;
+    }
+    img.tree-mid {
+        mix-blend-mode: darken;
+        visibility: hidden;
+        opacity:0;
+    }
+    img.tree-small {
+        mix-blend-mode: darken;
+        visibility: visable;
+        opacity:1;
+        // transform: scaleX(-1);
+        @include mq ($from: desktop) {
+            height: 400px;
+            top: -140px;
+            right: 230px;
+        }
+        @include mq ($from: leftCol) {
+            right:305px;
+        }
+        @include mq ($from: wide) {
+            right: 408px;
+        }
+        
+    }
+}
+.step2 {
+    img.tree-big {
+        mix-blend-mode: darken;
+        visibility: hidden;
+        opacity:0;
+    }
+    img.tree-mid {
+        mix-blend-mode: darken;
+        visibility: visable;
+        opacity:1;
+    }
+    img.tree-small {
+        mix-blend-mode: darken;
+        visibility: hidden;
+        opacity:0;
+    }
+}
+.step3 {
+    img.tree-big {
+        mix-blend-mode: darken;
+        visibility: visable;
+        opacity:1;
+    }
+    img.tree-mid {
+        mix-blend-mode: darken;
+        visibility: hidden;
+        opacity:0;
+    }
+    img.tree-small {
+        mix-blend-mode: darken;
+        visibility: hidden;
+        opacity:0;
+    }
+}
